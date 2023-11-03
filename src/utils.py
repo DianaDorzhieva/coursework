@@ -1,20 +1,20 @@
-from Vacanci import Super_Job, Hh, JsonSave
+from Vacanci import SuperJob, Hh, JsonSave
 
 user_info = "1 - вывод вакансий, 2 - вывод вакансий в сортированном виде от увелечения зп,3 - вывод вакансий в сортированном виде от уменьшения зп, 4 - вывод топ зп"
 
 
-def create_user_vacanci_Sj():
+def create_user_vacancy_Sj():
     print("Добрый день, введите интересующую вакансию")
     user_name = input()
     print("Добрый день, введите страницу поиска")
     user_page = input()
     print("Добрый день, введите количество вакансий")
     user_per_page = input()
-    user_vacanci = Super_Job(user_name, user_page, user_per_page).get_vacancies()
+    user_vacanci = SuperJob(user_name, user_page, user_per_page).get_vacancies()
     return user_vacanci
 
 
-def create_user_vacanci_Hh():
+def create_user_vacancy_Hh():
     print("Добрый день, введите интересующую вакансию")
     user_name = input()
     print("Добрый день, введите страницу поиска")

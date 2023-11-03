@@ -63,7 +63,7 @@ class Hh(Vacancies):
         return all_vacancies
 
 
-class Super_Job(Vacancies):
+class SuperJob(Vacancies):
     def __init__(self, name, page, per_page):
         self.name = name
         self.page = page
@@ -106,7 +106,7 @@ class Super_Job(Vacancies):
         return all_vacancies
 
 
-class Vanancy:
+class UserVacancy:
     def __init__(self, name, url, salary_from, salary_to, adress, description):
         self.name = name
         self.url = url
@@ -142,16 +142,12 @@ class JsonSave:
         with open(f"{self.filename}.json", "w", encoding="utf-8") as f:
             json.dump(data, f, indent=2, ensure_ascii=False)
 
-    def write_all_data(self, data):
-        with open(f"{self.filename}.json", "a+", encoding="utf-8") as f:
-            json.dump(data, f, indent=2, ensure_ascii=False)
-
     def get_all_vacanci(self):
         with open(f"{self.filename}.json", encoding="utf-8") as f:
             data = json.load(f)
         all_vacanci = []
         for vacanci in data:
-            all_vacanci.append(Vanancy(vacanci['name'],
+            all_vacanci.append(UserVacancy(vacanci['name'],
                                        vacanci['url'],
                                        vacanci['salary from'],
                                        vacanci['salary to'],
